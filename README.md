@@ -1,4 +1,20 @@
 # Firebase_DHT22_I2C
+##Set up Database Security Rules
+```
+// These rules grant access to a node matching the authenticated
+// user's ID from the Firebase auth token
+{
+  "rules": {
+    "UsersData": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+```
+##Code
 ```
 #include <Arduino.h>
 #include "SHTC3.h"
