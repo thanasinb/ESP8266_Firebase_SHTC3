@@ -13,18 +13,18 @@
 #include "addons/RTDBHelper.h"
 
 // Insert your network credentials
-#define WIFI_SSID "CPE_STAFF"
-#define WIFI_PASSWORD "123456789"
+#define WIFI_SSID "REPLACE_WITH_YOUR_SSID"
+#define WIFI_PASSWORD "REPLACE_WITH_YOUR_PASSWORD"
 
 // Insert Firebase project API Key
-#define API_KEY "AIzaSyC_rehOaIK1MPW10QPe8Tj83mQN2CdZK78"
+#define API_KEY "REPLACE_WITH_YOUR_PROJECT_API_KEY"
 
 // Insert Authorized Email and Corresponding Password
-#define USER_EMAIL "kititach.k@en.rmutt.ac.th"
-#define USER_PASSWORD "030413426Turk"
+#define USER_EMAIL "REPLACE_WITH_THE_USER_EMAIL"
+#define USER_PASSWORD "REPLACE_WITH_THE_USER_PASSWORD"
 
 // Insert RTDB URLefine the RTDB URL
-#define DATABASE_URL "https://esp8266-dht22-demo-default-rtdb.firebaseio.com/"
+#define DATABASE_URL "REPLACE_WITH_YOUR_DATABASE_URL"
 
 // Define Firebase objects
 FirebaseData fbdo;
