@@ -56,7 +56,6 @@ String uid;
 String databasePath;
 String tempPath;
 String humPath;
-String presPath;
 
 // BME280 sensor
 SHTC3 dht(Wire); // I2C
