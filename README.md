@@ -96,7 +96,6 @@ void sendFloat(String path, float value){
 void setup(){
   Serial.begin(115200);
   Wire.begin();
-  // Initialize BME280 sensor
   initWiFi();
 
   // Assign the api key (required)
