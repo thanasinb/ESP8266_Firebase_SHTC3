@@ -19,11 +19,8 @@
 #include <Arduino.h>
 #include "SHTC3.h"
 #include <Firebase_ESP_Client.h>
-#if defined(ESP32)
-  #include <WiFi.h>
-#elif defined(ESP8266)
-  #include <ESP8266WiFi.h>
-#endif
+#include <ESP8266WiFi.h>
+
 
 // Provide the token generation process info.
 #include "addons/TokenHelper.h"
@@ -57,8 +54,8 @@ String databasePath;
 String tempPath;
 String humPath;
 
-// BME280 sensor
-SHTC3 dht(Wire); // I2C
+// SHTC3 sensor
+SHTC3 shtc3(Wire); // I2C
 float temperature;
 float humidity;
 
@@ -144,16 +141,16 @@ void setup(){
 }
 
 void loop(){
-  dht.begin(true);
-  dht.sample();
+  shtc3.begin(true);
+  shtc3.sample();
 
   // Send new readings to database
   if (Firebase.ready() && (millis() - sendDataPrevMillis > timerDelay || sendDataPrevMillis == 0)){
     sendDataPrevMillis = millis();
 
     // Get latest sensor readings
-    temperature = dht.readTempC();
-    humidity = dht.readHumidity();
+    temperature = shtc3.readTempC();
+    humidity = shtc3.readHumidity();
 
     // Send readings to database:
     sendFloat(tempPath, temperature);
