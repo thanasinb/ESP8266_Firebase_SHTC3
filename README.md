@@ -1,4 +1,4 @@
-# Firebase_DHT22_I2C
+# ESP8266_Firebase_SHTC3
 ## Set up Database Security Rules
 ```
 // These rules grant access to a node matching the authenticated
